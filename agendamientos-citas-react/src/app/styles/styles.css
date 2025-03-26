@@ -1,0 +1,39 @@
+/* styles.css */
+
+/* Tailwind CSS styles can be used directly in your components. 
+   Additional custom styles can be added below. */
+
+/* Example custom styles */
+body {
+    @apply bg-gray-100;
+}
+
+.container {
+    @apply mx-auto p-4;
+}
+
+.bg-white {
+    @apply bg-white p-6 rounded-lg shadow-lg;
+}
+
+.text-blue-700 {
+    @apply text-blue-700;
+}
+
+.text-gray-700 {
+    @apply text-gray-700;
+}
+
+.text-center {
+    @apply text-center;
+}
+
+.rounded-md {
+    @apply rounded-md;
+}
+
+.btn {
+    @apply block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center;
+}
+
+/* Add more custom styles as needed */
