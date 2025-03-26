@@ -1,6 +1,12 @@
 import React from 'react';
 
-const CitySelector = ({ cities, selectedCity, onCityChange }) => {
+interface CitySelectorProps {
+    cities: string[]; // Lista de ciudades
+    selectedCity: string; // Ciudad seleccionada actualmente
+    onCityChange: (city: string) => void; // Función para manejar el cambio de ciudad
+}
+
+const CitySelector: React.FC<CitySelectorProps> = ({ cities, selectedCity, onCityChange }) => {
     return (
         <div>
             <label htmlFor="city" className="block text-sm font-medium text-gray-700">Ciudad:</label>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { LogoMigracion } from './Images'; // Importa el componente LogoMigracion
 
 const WelcomeModal = ({ isOpen, onClose }) => {
     return (
@@ -19,7 +19,7 @@ const WelcomeModal = ({ isOpen, onClose }) => {
                     </div>
                     <div className="p-4 space-y-4">
                         <div className="flex justify-center">
-                            <img src="./images/logo-migracion-colombia.png" alt="Imagen de bienvenida" className="h-22" />
+                            <LogoMigracion /> {/* Usa el componente LogoMigracion */}
                         </div>
                         <p className="text-base leading-relaxed text-gray-500">
                             ATENCIÓN: El agendamiento de citas en los Centros Facilitadores de Servicios Migratorios y Puestos de Control Migratorio,

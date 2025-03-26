@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-const AppointmentForm = () => {
-    const [city, setCity] = useState('');
-    const [tramite, setTramite] = useState('');
-    const [fecha, setFecha] = useState('');
-    const [horasDisponibles, setHorasDisponibles] = useState([]);
+const AppointmentForm: React.FC = () => {
+    const [city, setCity] = useState<string>('');
+    const [tramite, setTramite] = useState<string>('');
+    const [fecha, setFecha] = useState<string>('');
+    const [horasDisponibles, setHorasDisponibles] = useState<string[]>([]);
 
-    const handleCityChange = (event) => {
+    const handleCityChange = (event: ChangeEvent<HTMLSelectElement>): void => {
         setCity(event.target.value);
         // Aquí puedes agregar la lógica para obtener las horas disponibles según la ciudad seleccionada
     };
 
-    const handleTramiteChange = (event) => {
+    const handleTramiteChange = (event: ChangeEvent<HTMLSelectElement>): void => {
         setTramite(event.target.value);
     };
 
-    const handleFechaChange = (event) => {
+    const handleFechaChange = (event: ChangeEvent<HTMLInputElement>): void => {
         setFecha(event.target.value);
         // Aquí puedes agregar la lógica para obtener las horas disponibles según la fecha seleccionada
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
         // Aquí puedes agregar la lógica para enviar el formulario
     };
@@ -29,8 +29,14 @@ const AppointmentForm = () => {
         <form id="consulta-form" className="space-y-4" onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="city" className="block text-sm font-medium text-gray-700">Ciudad:</label>
-                <select id="city" name="city" value={city} onChange={handleCityChange} 
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" required>
+                <select
+                    id="city"
+                    name="city"
+                    value={city}
+                    onChange={handleCityChange}
+                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    required
+                >
                     <option value="">Seleccione una ciudad</option>
                     <option value="ARAUCA">ARAUCA</option>
                     <option value="ARMENIA">ARMENIA</option>
@@ -70,8 +76,14 @@ const AppointmentForm = () => {
             </div>
             <div>
                 <label htmlFor="tramite" className="block text-sm font-medium text-gray-700">Trámite:</label>
-                <select id="tramite" name="tramite" value={tramite} onChange={handleTramiteChange} 
-                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" required>
+                <select
+                    id="tramite"
+                    name="tramite"
+                    value={tramite}
+                    onChange={handleTramiteChange}
+                    className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    required
+                >
                     <option value="">Seleccione un trámite</option>
                     <option value="ATENCIÓN SIRE">ATENCIÓN SIRE</option>
                     <option value="CÉDULA DE EXTRANJERÍA">CÉDULA DE EXTRANJERÍA</option>
@@ -85,12 +97,22 @@ const AppointmentForm = () => {
             </div>
             <div>
                 <label htmlFor="fecha" className="block text-sm font-medium text-gray-700">Fecha de la cita:</label>
-                <input id="fecha" type="text" value={fecha} onChange={handleFechaChange}
+                <input
+                    id="fecha"
+                    type="text"
+                    value={fecha}
+                    onChange={handleFechaChange}
                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                    placeholder="Seleccione una fecha" required />
+                    placeholder="Seleccione una fecha"
+                    required
+                />
             </div>
-            <button type="submit"
-                className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Consultar cita</button>
+            <button
+                type="submit"
+                className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
+                Consultar cita
+            </button>
         </form>
     );
 };
