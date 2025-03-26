@@ -30,7 +30,7 @@ const App: React.FC = () => {
                 <div className="mb-4">
                     <h2 className="text-lg font-semibold mb-2">Selecciona una fecha:</h2>
                     <Calendar onDateChange={handleDateChange} />
-                    {selectedDate && <p className="mt-4">Fecha seleccionada: {selectedDate}</p>}
+                    {selectedDate && <p className="mt-4">Fecha seleccionadas: {selectedDate}</p>}
                 </div>
                 {/* Formulario de citas */}
                 <AppointmentForm />
